@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rpm.mapper.LoginMapper">
+	<select id="findusername" resultType="Users">
+		SELECT * FROM LOGIN_T WHERE USERNAME=#{username}
+	</select>
+	<update id="updateuserpwd" parameterType="Users">
+		update login_t set userpwd=#{userpwd} where idcard=#{idcard}
+	</update>
+	<update id="updateusertime" parameterType="Users">
+		update login_t set time_s=#{time_s} where username=#{username}
+	</update>
+</mapper>

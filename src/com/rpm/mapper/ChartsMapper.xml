@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rpm.mapper.ChartsMapper">
+<!-- statementType="STATEMENT"非预编译#{}=一个占位符  ${}=字符串 -->
+	<select id="findAll" resultType="Charts" statementType="STATEMENT">
+		select * from ${tablename} where type_t=0 order by ttime asc
+	</select>
+	
+	<select id="findPageAll" resultType="Charts" statementType="STATEMENT">
+		select * from(select h1.*,rownum rn from
+				(select * from ${tablename} order by ttime asc)h1
+				where rownum &lt;= ${offset})
+				where rn &gt; ${limit}
+	</select>
+	
+	<select id="findHouse" resultType="Charts" statementType="STATEMENT">
+		select * from ${tablename} where type_t=1 and house_id=${house_id}
+	</select>
+</mapper>

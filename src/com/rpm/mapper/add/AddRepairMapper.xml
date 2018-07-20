@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rpm.mapper.add.AddRepairMapper">
+	<insert id="addRepair">
+		insert into repair_t(describe,housename,username,telephone,time_t,type_t)
+	values(#{describe},#{housename},#{username},#{telephone},#{time_t},#{type_t})
+	</insert>
+	
+	<update id="updateRepair">
+		update repair_t set time_e=#{time_e},type_t=#{type_t} where repair_id=#{repair_id}
+	</update>
+</mapper>

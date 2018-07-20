@@ -1,0 +1,66 @@
+
+p {margin: 0 0 20px;}
+
+a {
+   color: #333;
+   -webkit-transition: all .2s ease-in-out;
+   -moz-transition: all .2s ease-in-out;
+   transition: all .2s ease-in-out;
+   text-decoration: none;
+}
+a:hover,
+a:focus {text-decoration: none;color: red;}
+
+
+/*right.html*/
+.place{height:40px; background:url(../images/righttop.gif) repeat-x;}
+.place ul{display:block;margin:0;padding:0;list-style:none;}
+.place li{display:block;margin:0;padding:0;list-style: none;}
+.place span{line-height:40px; font-weight:bold;float:left; margin-left:12px;}
+.placeul li{float:left; line-height:40px; padding-left:7px; padding-right:12px; background:url(../images/rlist.gif) no-repeat right;}
+.placeul li:last-child{background:none;}
+
+/* --Line-- */
+hr.line { margin: 15px auto; padding: 0; max-width: 90px;border: 0; border-top: solid 5px #ddd;text-align: center;}
+
+
+/* ---------------------------------------------------------------------------- */
+/* ---------------------------------Form--------------------------------------- */
+/* ---------------------------------------------------------------------------- */
+.form-group {margin-bottom: 25px;}
+.form-group input,.form-group textarea {padding: 10px;}
+.form-group input.form-control {height: auto;}
+.form-group textarea.form-control {height: 180px;}
+
+.review-form {}
+.review-form label textarea {height:130px;}
+.review-form label input, .review-form label textarea {width: 100%;}
+.review-form label, .review-form label span {display: block;}
+.review-form label span {margin: 10px 0;}
+
+
+/* ---------------------------------------------------------------------------- */
+/* -----------------------------------Button----------------------------------- */
+/* ---------------------------------------------------------------------------- */
+.btn {}
+.btn.btn-1{ background-color: #222;color: #fff;font-size: 25px;padding: 10px 15px;}
+.btn.btn-2{margin-left: 5px;background: #D9534F;color: #fff;}
+
+#logo img{
+	display: inline-block;
+	width: 250px;
+	height: 65px;
+}
+#logo  a{
+	display: block;
+	width:250px;
+}
+
+/* 超出部分用点代替*/
+
+#coath .col-lg-3 .product .caption{
+	overflow: hidden;
+	width: 255px;
+	height: 123px;
+	word-wrap: break-word;
+}

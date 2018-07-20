@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rpm.mapper.add.AddBoringMapper">
+	<insert id="addBoring">
+		insert into BORING_T(borings_id,boringname,source_s,telephone,handle,number_s,price,time_s,type_t,bnumber)
+		values(#{borings_id},#{boringname},#{source_s},#{telephone},#{handle},#{number_s},#{price},to_date(#{time_s},'YYYY-MM-DD HH24:mi:ss'),#{type_t},#{bnumber})
+	</insert>
+
+	<insert id="addBorings">
+		insert into BORINGS_T(boringname,number_e,type_t)
+		values(#{boringname},#{number_e},#{type_t})
+	</insert>
+</mapper>

@@ -1,0 +1,456 @@
+#head {
+    width: 100%;
+    height: 80px;
+    box-shadow: 0px 2px 2px #CCCCCC;
+}
+#head div{
+    float: left;
+}
+#logo{
+    width: 30%;
+    height: 100%;
+}
+#logo a{
+    display: inline-block;
+    width: 80%;
+    height: 100%;
+}
+#logo a img{
+ 	display: block;
+ 	margin: 15px 0px 0px 80px;
+}
+#nav{
+    height: 100%;
+    width: 70%;
+    text-align: center;
+    line-height: 80px;
+}
+.webregform{
+	background: url(../images/loginbg3.png) no-repeat scroll top left;
+	position: relative;
+    width: 100%;
+    height: 900px;
+    margin: 0 auto;
+}
+.webregform form{
+	display: block;
+    width: 100%;
+    height: 575px;
+   	margin: 0 auto;
+   	margin-left: 250px;
+}
+
+.item_p {
+    position: relative;
+    height: 36px;
+    margin-top: 18px
+}
+.item_pp {
+    position: relative;
+    height: 36px;
+    margin-top: 18px
+}
+.exp_p {
+    padding-left: 226px;
+    margin: 6px 0 -5px;
+    color: #333
+}
+.exp_p label {
+    padding-left: 28px;
+    background: url("../images/regbg131125.png") -200px -174px no-repeat
+}
+.exp_p span {
+    color: #656565
+}
+.exp_p span a {
+    color: #cb0000
+}
+.exp_p2 {
+    margin-top: 10px;
+    font-size: 12px;
+    color: #999
+}
+.exp_p2 a {
+    color: #656565
+}
+.exp_p2 a:hover {
+    color: #333
+}
+.item_p * {
+    vertical-align: middle
+}
+.item_p label.lbn {
+    display: inline-block;
+    width: 216px;
+    height: 35px;
+    padding-right: 6px;
+    line-height: 35px;
+    text-align: right;
+    font-size: 14px;
+    color: #080808;
+    overflow: hidden;
+    *zoom: 1
+}
+.item_p label.lbn b {
+    display: inline-block;
+    padding-left: 6px;
+    color: #cb0000;
+    font-weight: 400;
+    font-size: 16px;
+    font-family: SimSun
+}
+.item_p span.ipt_box {
+    display: inline-block;
+    width: 220px;
+    height: 35px;
+    line-height: 35px;
+    background: url("../images/regbg131125.png") 0 -45px no-repeat;
+    overflow: hidden
+}
+.item_p span.ipt_box_foc {
+    background-position: 0 0
+}
+.item_p span.ipt_box_err {
+    background-position: 0 -90px
+}
+.item_p span.ipt_box input {
+    width: 208px;
+    height: 25px;
+    line-height: 25px;
+    _line-height: 21px;
+    background: 0 0;
+    border: none;
+    padding: 5px 6px;
+    font-size: 14px;
+    font-family: Arial, SimSun;
+    overflow: hidden;
+    zoom: 1
+}
+.item_p a.ipt_btn {
+    display: inline-block;
+    width: 175px;
+    height: 38px;
+    border: none;
+    background: url("../images/regbg131125.png") 0 -306px no-repeat;
+    cursor: pointer
+}
+.item_p a.ipt_btn input {
+    width: 175px;
+    height: 38px;
+    line-height: 38px;
+    margin-top: -2px;
+    padding: 0;
+    background: 0 0;
+    border: none;
+    cursor: pointer;
+    color: #ffffcb;
+    font-size: 17px;
+    font-family: 'Microsoft YaHei'
+}
+.item_p a.ipt_btn:hover input {
+    color: #fff
+}
+.item_p .ipt_btn_short {
+    width: 82px;
+    height: 38px;
+    line-height: 38px;
+    margin-top: -2px;
+    padding: 0;
+    border: none;
+    cursor: pointer;
+    color: #ffffcb;
+    font-size: 17px;
+    font-family: 'Microsoft YaHei';
+    display: inline-block;
+    width: 82px;
+    height: 38px;
+    border: none;
+    background: url("../images/regbg131125.png") 0 -503px no-repeat;
+    cursor: pointer
+}
+.item_p .ipt_btn_short:hover {
+    color: #fff
+}
+.item_p_check span.ipt_box {
+    width: 109px;
+    background: url("../images/regbg131125.png") 0 -390px no-repeat
+}
+.item_p_check span.ipt_box input {
+    width: 97px;
+    *padding: 5px 0;
+    *margin: 0 6px
+}
+.item_p_check span.ipt_box.ipt_box_foc {
+    background-position: 0 -465px
+}
+.item_p_check span.ipt_box.ipt_box_err {
+    background-position: 0 -428px
+}
+.item_p_check span.sp_ckimg {
+    display: inline-block;
+    width: 72px;
+    height: 33px;
+    margin-left: 4px;
+    border: 1px solid #ccc;
+    background: #e4e4e4;
+    overflow: hidden
+}
+.item_p_check span.sp_ckimg img {
+    display: block;
+    border: none;
+    width: 70px;
+    height: 33px;
+    cursor: pointer
+}
+.item_p_check a.refreshcode {
+    display: inline-block;
+    width: 16px;
+    height: 19px;
+    padding: 8px 6px;
+    background: url("../images/regbg131125.png") -192px -196px no-repeat
+}
+.item_p span.succ {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-left: 6px;
+    color: #3c3;
+    background: url("../images/regbg131125.png") -200px -236px no-repeat;
+    display: none;
+}
+.item_p_dx span.ipt_box {
+    width: 92px;
+    height: 35px;
+    overflow: hidden;
+    *zoom: 1
+}
+.item_p_dx span.ipt_box input {
+    width: 80px
+}
+.item_p_dx .dxbtn {
+    display: inline-block;
+    width: 102px;
+    height: 35px;
+    line-height: 35px;
+    margin-left: -4px;
+    _margin-left: 0;
+    background: url("../images/regbg131125.png") -26px -228px no-repeat;
+    text-align: center;
+    color: #fff;
+    cursor: pointer;
+    overflow: hidden;
+    border: 0
+}
+.item_p_dx .dxbtnlong {
+    display: inline-block;
+    width: 127px;
+    height: 35px;
+    line-height: 35px;
+    margin-left: -4px;
+    _margin-left: 0;
+    background: url("../images/regbg131125.png") 0 -228px no-repeat;
+    text-align: center;
+    color: #fff;
+    cursor: pointer;
+    overflow: hidden;
+    border: 0
+}
+.item_p_dx .disab {
+    background-position: -26px -265px;
+    cursor: not-allowed
+}
+.item_p_dx .disablong {
+    background-position: -1px -265px;
+    cursor: not-allowed
+}
+.item_p_dx a.quesdx {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background: url("../images/regbg131125.png") -200px -396px no-repeat;
+    cursor: help
+}
+.item_p span.prompt {
+    display: none;
+    position: absolute;
+    left: 456px;
+    top: 2px;
+    width: 324px;
+    padding: 5px;
+    border: 1px solid #d1d1d1;
+    border-radius: 3px;
+    background: #fff;
+    color: #999
+}
+.r_regcont p.item_p span.tops2 {
+    top: -6px
+}
+.r_regcont p.item_p span.tops3 {
+    top: -12px
+}
+.item_p span.prompt i {
+    position: absolute;
+    left: -7px;
+    top: 33%;
+    width: 7px;
+    height: 11px;
+    background: url("../images/regbg131125.png") -201px -270px no-repeat
+}
+.item_p span.prompt b {
+    display: block;
+    line-height: 1.5em;
+    padding-left: 10px;
+    font-size: 12px;
+    font-weight: 400;
+    background: url("../images/regbg131125.png") -201px -296px no-repeat
+}
+
+.item_p span.prompt a {
+    color: #c00
+}
+p.item_p span.error {
+    display: none;
+    position: absolute;
+    left: 480px;
+    top: 2px;
+    padding: 5px;
+    border: 1px solid #f1abab;
+    border-radius: 3px;
+    font-size: 12px;
+    color: red;
+    background: #fffaef;
+    width: 300px
+}
+p.item_p span.error i {
+    position: absolute;
+    left: -29px;
+    top: 33%;
+    width: 33px;
+    height: 13px;
+    background: url("../images/regbg131125.png") -189px -370px no-repeat
+}
+
+p.item_p span.error b {
+    color: #999;
+    font-weight: 400;
+    display: block;
+    line-height: 1.5em;
+    padding-left: 10px;
+    background: url("../images/regbg131125.png") -201px -296px no-repeat
+}
+
+p.item_p span.error b a {
+    color: #09f
+}
+
+p.item_p span.error b a:hover {
+    text-decoration: underline
+}
+
+#pass_strength {
+    display: inline-block;
+    width: 94px;
+    height: 18px;
+    margin-left: 30px;
+    background-images: url("../images/regbg131125.png");
+    background-repeat: no-repeat;
+    display: none
+}
+span.pass_weak {
+    background-position: 0 -136px
+}
+
+span.pass_mid {
+    background-position: 0 -165px
+}
+
+span.pass_strong {
+    background-position: 0 -195px
+}
+
+p.item_p_tg span.ipt_box {
+    _margin-left: -3px
+}
+
+div.item_p span.error {
+    display: none;
+    position: absolute;
+    left: 480px;
+    top: 2px;
+    padding: 5px;
+    border: 1px solid #f1abab;
+    border-radius: 3px;
+    font-size: 12px;
+    color: red;
+    background: #fffaef;
+    width: 300px
+}
+div.item_p span.error i {
+    position: absolute;
+    left: -29px;
+    top: 33%;
+    width: 33px;
+    height: 13px;
+    background: url("../images/regbg131125.png") -189px -370px no-repeat
+}
+div.item_p span.error b {
+    color: #999;
+    font-weight: 400;
+    display: block;
+    line-height: 1.5em;
+    padding-left: 10px;
+    background: url("../images/regbg131125.png") -201px -296px no-repeat
+}
+div.item_p span.error b a {
+    color: #09f
+}
+div.item_p span.error b a:hover {
+    text-decoration: underline
+}
+.item_sex {
+	display: block;
+	text-align: center;
+}
+/*.item_sex label{
+	margin-left: -115px;
+}*/
+.item_sex input[type=radio]{
+	margin: 10px;
+}
+
+
+div.dialog{
+	display: none;
+	position: absolute;
+	top: 15%;
+	left: 27%;
+	width: 400px;
+	height: 140px;
+	background: #ccffff;
+	border-radius: 5px;
+	z-index: 100000000;
+}
+.dialog .d-header{
+	width: 100%;
+	height: 30px;
+	line-height: 30px;
+	border-bottom: 1px solid #39B3D7;
+}
+.dialog .d-content{
+	width: 100%;
+	height: 60px;
+	text-align: center;
+	line-height: 60px;
+}
+.dialog .d-foot{
+	width: 100%;
+	height: 50px;
+	line-height: 30px;
+}
+.dialog .d-foot button{
+	width: 60px;
+	height: 40px;
+	float: right;
+	margin-right: 20px;
+	border-radius: 2px;
+}

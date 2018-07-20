@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rpm.mapper.RepairMapper">
+	<select id="findAll" resultType="Repair">
+		select * from repair_t order by type_t asc,time_t desc
+	</select>
+	
+	<select id="findAllNull" resultType="Repair">
+		select * from repair_t where type_t=0 or type_t=1
+	</select>
+	
+	<select id="findPageAll" resultType="Repair">
+		select * from(select h1.*,rownum rn from
+				(select * from repair_t order by type_t asc,time_t desc)h1
+				where rownum &lt;= #{offset})
+				where rn &gt; #{limit}
+	</select>
+	
+	<select id="findUser" resultType="Repair">
+		<bind name="fhNames" value="'%' + _parameter.username + '%'"/>
+		select * from repair_t where username like #{fhNames} or housename like #{fhNames}
+		 order by type_t asc,time_t desc
+	</select>
+	
+	<select id="findPageUser" resultType="Repair">
+	<bind name="fhNames" value="'%' + _parameter.username + '%'"/>
+		select * from(select h1.*,rownum rn from
+				(select * from repair_t where username like #{fhNames} or 
+				housename like #{fhNames}  order by type_t asc,time_t desc)h1
+				where rownum &lt;= #{offset})
+				where rn &gt; #{limit}
+	</select>
+</mapper>

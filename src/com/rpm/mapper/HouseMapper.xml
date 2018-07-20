@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rpm.mapper.HouseMapper">
+	<select id="findAll" resultType="House">
+		SELECT * FROM house_t
+	</select>
+	
+	<select id="findAllNull" resultType="House">
+		SELECT * FROM house_t where t_type=0
+	</select>
+	
+	<select id="findHouseId" resultMap="Houset">
+		SELECT h.*,u.username,u.telephone FROM house_t h
+		LEFT OUTER JOIN user_t u on h.user_id=u.user_id 
+		where housename=#{nameid}
+	</select>
+	
+	<select id="findHouse" resultMap="Houset">
+		SELECT h.*,u.username,u.photo_url FROM house_t h
+     LEFT OUTER JOIN user_t u on  h.user_id=u.user_id
+		 WHERE h.house_id=#{id}
+	</select>
+	
+	<select id="findPagingAll" resultMap="Houset">
+		select * from(select h1.*,rownum rn from
+				(SELECT h.*,u.username,u.photo_url FROM house_t h
+     LEFT OUTER JOIN user_t u on h.user_id=u.user_id)h1
+				where rownum &lt;= #{offset})
+				where rn &gt; #{limit}
+	</select>
+	
+	<select id="findHouseName" resultMap="Houset">
+	<bind name="fhNames" value="'%' + _parameter.fhName + '%'"/>
+	<!-- 左连接右边可以为空 -->
+		select * from(select h1.*,rownum rn from
+				(SELECT h.*,u.username,u.photo_url FROM house_t h
+     LEFT OUTER JOIN user_t u on  h.user_id=u.user_id
+		 WHERE h.housename like #{fhNames})h1
+				where rownum &lt;= #{offset})
+				where rn &gt; #{limit}
+	</select>
+	
+	<select id="findHousesName" resultMap="Houset">
+	<bind name="fhsNames" value="'%' + _parameter.fhsName + '%'"/>
+	<!-- 左连接右边可以为空 -->
+		SELECT h.*,u.username,u.photo_url FROM house_t h
+     LEFT OUTER JOIN user_t u on  h.user_id=u.user_id
+		 WHERE h.housename like #{fhsNames}
+	</select>
+	
+	<resultMap type="House" id="Houset">
+		<id property="house_id" column="house_id"/>
+		<result property="housename" column="housename"/>	
+		<result property="room" column="room"/>	
+		<result property="hall" column="hall"/>	
+		<result property="kitchen" column="kitchen"/>	
+		<result property="toilet" column="toilet"/>	
+		<result property="acreage" column="acreage"/>
+		<result property="price" column="price"/>	
+		<result property="rent" column="rent"/>	
+		<result property="t_type" column="t_type"/>	
+		<result property="t_types" column="t_types"/>	
+		<result property="balcony" column="balcony"/>
+		<result property="from_id" column="from_id"/>
+		<association property="user" resultMap="User">
+		<!-- 一对一，java类型 -->
+		</association>
+	</resultMap>
+	<resultMap type="User" id="User">
+		<!-- 一对一，java类型 -->
+			<id property="user_id" column="user_id" />		
+			<result property="username" column="username"/>
+			<result property="photo_url" column="photo_url"/>
+			<result property="telephone" column="telephone"/>	
+	</resultMap>
+	
+</mapper>

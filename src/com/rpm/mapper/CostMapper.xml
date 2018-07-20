@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rpm.mapper.CostMapper">
+	<select id="findAll" resultType="Cost">
+		select f.*,u.username from from_t f LEFT OUTER JOIN user_t u
+		on f.user_id=u.user_id order by f.housename
+	</select>
+	
+	<select id="findPageAll" resultType="Cost">
+		select * from(select h1.*,rownum rn from
+			(select f.*,
+			f.water_bill+f.electric_bill+f.gas_bill+f.property_bill+f.other allcost,
+			u.username from from_t f LEFT OUTER JOIN user_t u 
+			on f.user_id=u.user_id order by f.housename)h1
+			where rownum &lt;= #{offset})
+			where rn &gt; #{limit}
+	</select>
+	
+	<select id="findUser" resultType="Cost">
+	<bind name="fhNames" value="'%' + _parameter.username + '%'"/>
+		select f.*,u.username from from_t f LEFT OUTER JOIN user_t u
+			 on f.user_id=u.user_id where f.housename like #{fhNames} order by f.housename
+			
+	</select>
+	
+	<select id="findPageUser" resultType="Cost">
+	<bind name="fhNames" value="'%' + _parameter.username + '%'"/>
+		select * from(select h1.*,rownum rn from
+				(select f.*,
+				f.water_bill+f.electric_bill+f.gas_bill+f.property_bill+f.other allcost,
+				u.username from from_t f LEFT OUTER JOIN user_t u
+			on f.user_id=u.user_id where f.housename like #{fhNames}
+			order by f.housename)h1
+				where rownum &lt;= #{offset})
+				where rn &gt; #{limit}
+	</select>
+	
+	<select id="findCost" resultType="Cost">
+		select f.*,u.username from from_t f LEFT OUTER JOIN user_t u
+		on f.user_id=u.user_id where f.housename=#{housename}
+	</select>
+</mapper>

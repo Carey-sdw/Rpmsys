@@ -1,0 +1,60 @@
+@charset "UTF-8";
+/*v1.0.0*/
+a, body, dd, dl, dt, fieldset, form, h1, h2, h3, h4, h5, h6, html, img, input, label, li, ol, p, select, table, tbody, td, tfoot, th, thead, tr, ul {
+    margin: 0;
+    padding: 0
+}
+html {
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+body {
+    color: #333;
+    font-family: Arial, 'Microsoft YaHei', SimSun;
+    font-size: 14px
+}
+ul {
+    list-style: none
+}
+img {
+    display: inline-block;
+    border: none
+}
+a {
+    text-decoration: none;
+    color: #2783ea
+}
+a:active {
+    color: #f60
+}
+a:focus {
+    outline: 0
+}
+textarea {
+    outline: 0;
+    resize: none;
+    overflow-y: auto
+}
+input {
+    padding: 4px 6px;
+    overflow: visible;
+    font-size: 12px;
+    vertical-align: middle;
+    outline: 0
+}
+input[type=text] {
+    outline: 0
+}
+table {
+    border-collapse: collapse
+}
+.clearFix:after {
+    clear: both;
+    height: 0;
+    content: ".";
+    visibility: hidden;
+    display: block;
+}
+.clear{
+	*zoom:1;
+}

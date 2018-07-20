@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rpm.mapper.UsersMapper">
+
+	<select id="findUser" resultType="Users">
+		SELECT * FROM USER_T WHERE USERNAME=#{username} AND USERPWD=#{userpwd}
+	</select>
+	
+	<select id="findusers" resultType="User">
+		<bind name="username" value="'%' + _parameter.name + '%'"/>
+		SELECT * FROM USER_T a WHERE a.USERNAME like #{username} or a.HOUSE_NAME like #{username}
+	</select>
+	
+	<select id="findAll" resultType="User">
+		SELECT * FROM USER_T
+	</select>
+	
+	<select id="pageUser" resultType="User">
+  <!-- 原样输出 -->
+  	 <![CDATA[
+  	SELECT * FROM (SELECT c.*, ROWNUM rn FROM 
+                    (SELECT * FROM USER_T order by registration_time desc) c 
+                               WHERE ROWNUM <= #{offset}) WHERE rn > #{limit}
+  	]]>
+  </select>
+  
+  <select id="pageUsers" resultType="User">
+  <bind name="users" value="'%' + _parameter.usersname + '%'"/>
+  <!-- 原样输出 -->
+  	 <![CDATA[
+  	SELECT * FROM (SELECT c.*, ROWNUM rn FROM 
+                    (SELECT * FROM USER_T a WHERE a.USERNAME like #{users}
+                    or a.HOUSE_NAME like #{users} order by registration_time desc) c 
+                               WHERE ROWNUM <= #{offset}) WHERE rn > #{limit}
+  	]]>
+  </select>
+  
+  <select id="findID" resultType="User">
+		SELECT * FROM USER_T WHERE USERNAME=#{nameid}
+	</select>
+	
+	 <select id="findU" resultType="User">
+		SELECT * FROM USER_T WHERE USER_ID=#{user_id}
+	</select>
+  
+</mapper>

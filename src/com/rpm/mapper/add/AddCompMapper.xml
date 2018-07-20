@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rpm.mapper.add.AddCompMapper">
+	<insert id="addComp">
+		insert into complaint_t(describe,housename,username,telephone,time_s,type_t)
+	values(#{describe},#{housename},#{username},#{telephone},to_date(#{time_s},'YYYY-MM-dd HH24:mi:ss'),#{type_t})
+	</insert>
+	
+	<update id="updateComp">
+	 update complaint_t set time_e=to_date(#{time_e},'YYYY-MM-dd HH24:mi:ss'),type_t=#{type_t} where complaint_id=#{complaint_id}
+	</update>
+</mapper>

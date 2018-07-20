@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rpm.mapper.ComplaintMapper">
+	<select id="findAll" resultType="Complaint">
+		select * from complaint_t order by type_t asc,time_s desc
+	</select>
+	
+	<select id="findAllNull" resultType="Complaint">
+		select * from complaint_t where type_t=0 or type_t=1
+	</select>
+	
+	<select id="findPageAll" resultType="Complaint">
+		select * from(select h1.*,rownum rn from
+				(select * from complaint_t order by type_t asc,time_s desc)h1
+				where rownum &lt;= #{offset})
+				where rn &gt; #{limit}
+	</select>
+	
+	<select id="findUser" resultType="Complaint">
+		<bind name="fhNames" value="'%' + _parameter.username + '%'"/>
+		select * from complaint_t where username like #{fhNames} or housename like #{fhNames}
+		 order by type_t asc,time_s desc
+	</select>
+	
+	<select id="findPageUser" resultType="Complaint">
+	<bind name="fhNames" value="'%' + _parameter.username + '%'"/>
+		select * from(select h1.*,rownum rn from
+				(select * from complaint_t where username like #{fhNames} or 
+				housename like #{fhNames}  order by type_t asc,time_s desc)h1
+				where rownum &lt;= #{offset})
+				where rn &gt; #{limit}
+	</select>
+</mapper>

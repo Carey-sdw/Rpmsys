@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rpm.mapper.add.AddPriceMapper">
+	<select id="findAll" resultType="Price">
+		select * from cost_t
+	</select>
+
+	<select id="findPrice" resultType="Price">
+		select * from cost_t where pricename=#{pricename}
+	</select>
+
+	<insert id="addPrice">
+		insert into COST_T(price,pricename,type_t)values(#{price},#{pricename},#{type_t})
+	</insert>
+
+	<update id="updatePrice">
+		update COST_T set price = #{price},type_t=#{type_t} where cost_id=#{cost_id}
+	</update>
+</mapper>

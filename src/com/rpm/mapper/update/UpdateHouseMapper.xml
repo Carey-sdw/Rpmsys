@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rpm.mapper.update.UpdateHouseMapper">
+	<update id="updateHouse">
+		update house_t set user_id=#{user_id},t_type=1,t_types=1 where housename=#{housename}
+	</update>
+	
+	<update id="updHouse">
+		update house_t set user_id=#{user_id},t_type=0,t_types=1 where housename=#{housename}
+	</update>
+	
+	<update id="updateHousef">
+		update house_t set from_id=#{from_id} where housename=#{housename}
+	</update>
+	
+	<update id="updateHouses">
+		update house_t set room=#{room},hall=#{hall},kitchen=#{kitchen},toilet=#{toilet},acreage=#{acreage},price=#{price},rent=#{rent},balcony=#{balcony},t_types=#{t_types}
+		where house_id=#{house_id}
+	</update>
+	
+	<delete id="deleteHouse">
+		delete from house_t where house_id=#{house_id}
+	</delete>
+</mapper>

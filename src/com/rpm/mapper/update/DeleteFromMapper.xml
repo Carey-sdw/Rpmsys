@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rpm.mapper.update.DeleteFromMapper">
+	<delete id="delw">
+		delete from water_bill where house_id=#{house_id}
+	</delete>
+	
+	<delete id="dele">
+		delete from electric_bill where house_id=#{house_id}
+	</delete>
+	
+	<delete id="delg">
+		delete from gas_bill where house_id=#{house_id}
+	</delete>
+	
+	<delete id="delp">
+		delete from property_bill where house_id=#{house_id}
+	</delete>
+	
+	<delete id="delo">
+		delete from other where house_id=#{house_id}
+	</delete>
+	
+	<delete id="delfrom">
+		delete from from_t where from_id=#{from_id}
+	</delete>
+</mapper>

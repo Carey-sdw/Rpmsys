@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rpm.mapper.BoringMapper">
+	<select id="findAll" resultType="Boring">
+		select * from boring_t order by time_s,boringname desc
+	</select>
+	
+	<select id="findPageAll" resultType="Boring">
+		select * from(select h1.*,rownum rn from
+				(select * from boring_t order by boringname,time_s desc)h1
+				where rownum &lt;= #{offset})
+				where rn &gt; #{limit}
+	</select>
+	
+	<select id="findUser" resultType="Boring">
+		<bind name="fhNames" value="'%' + _parameter.username + '%'"/>
+		select * from boring_t where boringname like #{fhNames}
+		 order by boringname,time_s desc
+	</select>
+	
+	<select id="findsUser" resultType="Boring">
+		select * from boring_t where boringname = #{usersname} and type_t = #{type_t}
+	</select>
+	
+	<select id="findPageUser" resultType="Boring">
+	<bind name="fhNames" value="'%' + _parameter.username + '%'"/>
+		select * from(select h1.*,rownum rn from
+				(select * from boring_t where boringname like #{fhNames}
+				order by boringname,time_s desc)h1
+				where rownum &lt;= #{offset})
+				where rn &gt; #{limit}
+	</select>
+</mapper>

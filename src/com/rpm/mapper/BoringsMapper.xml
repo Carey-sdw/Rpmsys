@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rpm.mapper.BoringsMapper">
+	<select id="findAll" resultType="Borings">
+		select * from borings_t order by boringname desc
+	</select>
+
+	<select id="findUsers" resultType="Borings">
+		select * from borings_t where boringname = #{username}
+		 order by boringname desc
+	</select>
+	
+	<select id="findUser" resultType="Boring">
+		select * from (select * from boring_t where boringname = #{usersname} and type_t = #{type_t}
+		 order by time_s desc)where rownum=1
+	</select>
+	
+	<select id="findOut" resultType="BoringOut">
+		select * from (select * from outboring_t where boringname = #{usersname} and type_t = #{type_t}
+		 order by time_s desc)where rownum=1
+	</select>
+
+	<select id="findsUser" resultType="Borings">
+		select * from borings_t where boringname = #{usersname} and type_t = #{type_t}
+	</select>
+	
+	<update id="updateBorings">
+		update borings_t set number_e = #{number_e} where borings_id = #{borings_id}
+	</update>
+</mapper>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rpm.mapper.update.UpdateUserMapper">
+	<update id="updateUser">
+		update user_t set username=#{username},idcard=#{idcard},telephone=#{telephone},occupancy_type=#{occupancy_type},occupancy_number=#{occupancy_number},time_e=#{time_e},registration_time=#{registration_time},describe=#{describe} where user_id=#{user_id}
+	</update>
+	
+	<update id="updateUserPhoto">
+		update user_t set photo_url=#{url} where user_id=#{id}
+	</update>
+	
+</mapper>

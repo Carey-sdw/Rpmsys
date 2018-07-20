@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rpm.mapper.update.UpdateChartMapper">
+	<update id="updateChart" statementType="STATEMENT">
+		update ${pricename} set type_t=${type_t},ttime=${ttime},tvalues=${tvalues},tvalue=${tvalue},price=${price} where tds=${tds}
+	</update>
+	
+	<update id="update" statementType="STATEMENT">
+		update ${pricename} set type_t=0 where house_id=${house_id}
+	</update>
+	
+	<update id="updateForm"  statementType="STATEMENT">
+		update from_t set ${pricename}=${price} where from_id=${ttype}
+	</update>
+	
+	<update id="updateform"  statementType="STATEMENT">
+		update from_t set ${pricename}=0 where housename='${housename}'
+	</update>
+	
+	<insert id="addw">
+		insert into water_bill(tvalue,ttime,tvalues,ttype,type_t,house_id)
+	values (#{tvalue},#{ttime},#{tvalues},#{ttype},#{type_t},#{house_id})
+	</insert>
+	
+	<insert id="adde">
+		insert into electric_bill(tvalue,ttime,tvalues,ttype,type_t,house_id)
+	values (#{tvalue},#{ttime},#{tvalues},#{ttype},#{type_t},#{house_id})
+	</insert>
+	
+	<insert id="addo">
+		insert into other(tvalue,ttime,tvalues,ttype,type_t,house_id)
+	values (#{tvalue},#{ttime},#{tvalues},#{ttype},#{type_t},#{house_id})
+	</insert>
+	
+	<insert id="addp">
+		insert into property_bill(tvalue,ttime,tvalues,ttype,type_t,house_id)
+	values (#{tvalue},#{ttime},#{tvalues},#{ttype},#{type_t},#{house_id})
+	</insert>
+	
+	<insert id="addg">
+		insert into gas_bill(tvalue,ttime,tvalues,ttype,type_t,house_id)
+	values (#{tvalue},#{ttime},#{tvalues},#{ttype},#{type_t},#{house_id})
+	</insert>
+	
+	<update id="updw">
+		update water_bill set user_id=#{user_id} where ttype=#{house_id}
+	</update>
+	
+	<update id="upde">
+		update electric_bill set user_id=#{user_id} where ttype=#{house_id}
+	</update>
+	
+	<update id="updg">
+		update gas_bill set user_id=#{user_id} where ttype=#{house_id}
+	</update>
+	
+	<update id="updp">
+		update property_bill set user_id=#{user_id} where ttype=#{house_id}
+	</update>
+	
+	<update id="updo">
+		update other set user_id=#{user_id} where ttype=#{house_id}
+	</update>
+	
+	<update id="updfrom">
+		update from_t set user_id=#{user_id} where housename=#{housename}
+	</update>
+</mapper>

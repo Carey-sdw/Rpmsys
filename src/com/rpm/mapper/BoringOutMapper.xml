@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rpm.mapper.BoringOutMapper">
+	<select id="findAll" resultType="BoringOut">
+		select * from outboring_t order by boringname,time_s desc
+	</select>
+	
+	<select id="findPageAll" resultType="BoringOut">
+		select * from(select h1.*,rownum rn from
+				(select * from outboring_t order by boringname,time_s desc)h1
+				where rownum &lt;= #{offset})
+				where rn &gt; #{limit}
+	</select>
+	
+	<select id="findUser" resultType="BoringOut">
+		<bind name="fhNames" value="'%' + _parameter.username + '%'"/>
+		select * from outboring_t where boringname like #{fhNames}
+		 order by boringname,time_s desc
+	</select>
+	
+	<select id="findPageUser" resultType="BoringOut">
+	<bind name="fhNames" value="'%' + _parameter.username + '%'"/>
+		select * from(select h1.*,rownum rn from
+				(select * from outboring_t where boringname like #{fhNames}
+				order by boringname,time_s desc)h1
+				where rownum &lt;= #{offset})
+				where rn &gt; #{limit}
+	</select>
+</mapper>
