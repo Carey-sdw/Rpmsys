@@ -46,7 +46,7 @@
 	    </div>
     
     </div>
-    <div class="loginbm">湖南省长沙市望城区长沙医学院</div>
+    <div class="loginbm">湖南省-长沙市-望城区-长沙医学院</div>
 </body>
 
 </html>
