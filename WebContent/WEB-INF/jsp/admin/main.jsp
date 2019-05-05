@@ -37,7 +37,7 @@
 	</script>
 </head>
 
-<body scoll=no>
+<body scoll=no  style="overflow-y: hidden; overflow-x: hidden;" >
 	<!--top-->
 	<div style="height:88px;width:1365px;overflow:hidden;background:url(${pageContext.request.contextPath}/assets/images/topbg.gif) repeat-x;">
 		<div class="topleft">

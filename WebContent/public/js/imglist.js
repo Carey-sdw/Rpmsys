@@ -45,7 +45,7 @@ $(".cablebtn").click(function(){
 !(function clos() {
 	$(".update").live("click",function(){
 		var user_id=$(this).next().next().text();
-		 window.location ="updateuser?id="+user_id;
+		 window.location ="updateuser?id="+user_id;//跳到详情页
 	});
 })()
 
